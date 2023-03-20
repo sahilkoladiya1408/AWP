@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+}
+
+.header_center h1{
+    font-size: 40px;
+    margin:15px 0;
+    color: rgb(1, 1, 65);
+}
+
+.header_left img{
+    width: 100px;
+    height: 90px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(1, 1, 65);
+    /* padding: 0 50px; */
+}
+
+
+.navbar .right ul{
+    display: flex;
+    gap: 50px;
+    margin: 15px 0;
+}
+
+.navbar .right ul li{
+    list-style: none;
+}
+
+.navbar .right ul a{
+    text-decoration: none;
+    color: white;
+}
+
+.header{
+    width: 600px;
+    margin: 25px auto;
+}
+
+.header h1{
+    font-size: 40px;
+    text-align: center;
+    color: rgb(1, 1, 65);
+}
+
+.programme,.about_section,.vision_section,.mission_section,.peos_section,.pso_section{
+    padding: 0 50px;
+}
+
+.programme h4{
+    padding: 5px 15px;
+    margin-bottom: 15px;
+    color: white;
+    background-color: rgb(1, 1, 65);
+}
+
+table tr td{
+    padding: 4px 15px;
+}
+
+h3{
+    margin: 25px 0 10px 0;
+    font-size: 30px;
+    color: rgb(1, 1, 65);
+}
+
+.para{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.about_section ul ,.vision_section ul ,.mission_section ul ,.peos_section ul ,.pso_section ul{
+    margin: 10px 10px 0 30px;
+}
+
+.about_section ul li ,.vision_section ul li ,.mission_section ul li ,.peos_section ul li ,.pso_section ul li{
+    margin-bottom: 10px;
+}
+
+footer{
+    color: white;
+    background-color: rgb(1, 1, 65);
+    text-align: center;
+    padding: 15px 0;
+}
