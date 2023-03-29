@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./angular.min.js"></script>
+  <script type="text/javascript">
+    var app = angular.module('mainApp', [])
+      .controller('Factorial_Controller', function($scope) {
+      })
+      .filter('factorial', function() {
+        return    function factorial(n) {
+          return n === 0 ? 1 : n * factorial(n - 1);
+        }
+      });
+  </script>
+</head>
+<body ng-app="mainApp" ng-controller="Factorial_Controller">
+  <h1>Factorial a Number in AngularJS</h1>
+  <h3>Enter a Number : <input type="number" ng-model="val" ng-init="val=0"/></h3>
+  <h3>The factorial value of {{val}} is {{val | factorial}}. </h3>
+</body>
+</html>
