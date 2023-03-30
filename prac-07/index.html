@@ -1,47 +1,84 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myMod">
+<html lang="en" ng-app="">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>angularJS</title>
     <script src="angular.min.js"></script>
-    <script src="module1.js"></script>
-    <script src="route.min.js"></script>
-<body ng-controller="myController">
+
+<body style="font-size: 20px;">
 
     <div class="container" >
-        <h1>Order Form</h1>
-        <!-- <input class="form-control" ng-model="search"><br>
-        <button class="btn btn-primary" ng-click="searchProduct(search)">Search Product</button> -->
-        <table class="table">
+        <h1>Billing Section</h1>
+        <table border="1">
             <thead>
                 <tr>
-                    <th>Product Code</th>
                     <th>Product Name</th>
                     <th>Product Price</th>
                     <th>GST(%)</th>
                     <th>Quantity</th>
                     <th>Product Total</th>
                 </tr>
-            </thead> 
-            <tbody>
-                <tr ng-repeat="product in billing" ng-init="model">
-                    <td>{{product.code}}</td>
-                    <td>{{product.name}}</td>
-                    <td>{{product.price}}</td>
-                    <td>{{product.gst}}</td>
-                    <td><input type="number" ng-model="model[$index].qty" 
-                        ng-change="product.total = model[$index].qty?(product.price+(product.gst*product.price/100)) * model[$index].qty:0"
-                        ng-init="product.total = model[$index].qty?(product.price+(product.gst*product.price/100)) * model[$index].qty:0"></td>
-                        <td>{{product.total}}</td>
+            </thead>
+            <tbody onchange="totalClu()">
+                <tr>
+                    <td><input type="text" ng-model="name1"></td>
+                    <td><input type="number" ng-model="price1"></td>
+                    <td><input type="number" ng-model="gst1"></td>
+                    <td><input type="number" ng-model="qty1"></td>
+                    <td id="t1">{{(price1+(gst1*price1/100))*qty1}}</td>
                 </tr>
                 <tr>
-                    <td colspan="5" style="text-align:right">Gross Total</td>
-                    <td>{{total()}}</td>
+                    <td><input type="text" ng-model="name2"></td>
+                    <td><input type="number" ng-model="price2"></td>
+                    <td><input type="number" ng-model="gst2"></td>
+                    <td><input type="number" ng-model="qty2"></td>
+                    <td id="t2">{{(price2+(gst2*price2/100))*qty2}}</td>
+                </tr>
+                <tr>
+                    <td><input type="text" ng-model="name3"></td>
+                    <td><input type="number" ng-model="price3"></td>
+                    <td><input type="number" ng-model="gst3"></td>
+                    <td><input type="number" ng-model="qty3"></td>
+                    <td id="t3">{{(price3+(gst3*price3/100))*qty3}}</td>
+                </tr>
+                <tr>
+                    <td><input type="text" ng-model="name4"></td>
+                    <td><input type="number" ng-model="price4"></td>
+                    <td><input type="number" ng-model="gst4"></td>
+                    <td><input type="number" ng-model="qty4"></td>
+                    <td id="t4">{{(price4+(gst4*price4/100))*qty4}}</td>
+                </tr>
+                <tr>
+                    <td><input type="text" ng-model="name5"></td>
+                    <td><input type="number" ng-model="price5"></td>
+                    <td><input type="number" ng-model="gst5"></td>
+                    <td><input type="number" ng-model="qty5"></td>
+                    <td id="t5">{{(price5+(gst5*price5/100))*qty5}}</td>
+                </tr>
+               
+                <tr>
+                    <td colspan="4" style="text-align:right">Gross Total</td>
+                <td id="gtotal"></td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+    <script>
+        const totalClu = () =>{
+            // console.log(e);
+            const t1 = parseFloat(document.getElementById("t1").textContent);
+            const t2 = parseFloat(document.getElementById("t2").textContent);
+            const t3 = parseFloat(document.getElementById("t3").textContent);
+            const t4 = parseFloat(document.getElementById("t4").textContent);
+            const t5 = parseFloat(document.getElementById("t5").textContent);
+
+            console.log(`${t1} ${t2} ${t3} ${t4} ${t5}`);
+            const gt = t1+t2+t3+t4+t5;
+            document.getElementById("gtotal").innerHTML = gt;
+        }        
+    </script>
 </body>
 </html>

@@ -1,24 +1,26 @@
-let s = {
-    modelName : "Ford Mustang Mach 1 Premium",
-    speed : 270,
-    color : "Matte Black",
-    price : "1.5 cr"
+function Car(carModel, carColor, carPrice, carSpeed){
+    this.carModel = carModel;
+    this.carColor = carColor;
+    this.carPrice = carPrice;
+    this.carSpeed = carSpeed;
+
+    this.displaySpeed = () =>{
+        console.log(`The current speed of the ${this.carModel} is ${this.carSpeed} km/h`);
     }
 
-const displaySpeed = (s) => {
-    console.log(s.speed + "km/h");
+    this.increaseSpeed = (speed) => {
+        this.carSpeed += speed;
+        console.log(`The ${this.carModel} has increased its speed by ${speed} km/h to ${this.carSpeed} km/h`);
+    }
+    
+    this.decreaseSpeed = (speed) =>{
+        this.carSpeed -= speed;
+        console.log(`The ${this.carModel} has decreased its speed by ${speed} km/h to ${this.carSpeed} km/h`);
+    }
 }
 
-displaySpeed(s);
+const myCar = new Car('Ford Mustang GTX', 'Dark Black', 15000000 , 315);
 
-const IncrementSpeed = (s) => {
-    console.log(s.speed + 100 + "km/h");
-}
-
-IncrementSpeed(s);
-
-const decrementSpeed = (s) => {
-    console.log(s.speed - 100 + "km/h");
-}
-
-decrementSpeed(s);
+myCar.displaySpeed();
+myCar.increaseSpeed(50);
+myCar.decreaseSpeed(10);

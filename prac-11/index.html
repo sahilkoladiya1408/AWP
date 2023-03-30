@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myMod">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>angularJS</title>
+    <script src="angular.min.js"></script>
+    <script src="module1.js"></script>
+
+<body ng-controller="myController" style="font-size: 20px;">
+
+    <div class="container" >
+        <h1>Billing Section</h1>
+        <table class="table" border="1">
+            <thead>
+                <tr>
+                    <th ng-click="myFunction('name')">Product Name</th>
+                    <th ng-click="myFunction('price')">Product Price</th>
+                    <th ng-click="myFunction('qut')">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products | orderBy:order">
+                    <td><input style="padding: 3px;" type="text" ng-model="product.name"></td>
+                    <td><input style="padding: 3px;" type="number" ng-model="product.price"></td>
+                    <td><input style="padding: 3px;" type="number" ng-model="product.qut"></td>
+                </tr>
+    
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
