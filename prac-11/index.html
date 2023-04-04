@@ -4,29 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>angularJS</title>
+    <title>Product Filter</title>
     <script src="angular.min.js"></script>
     <script src="module1.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
 
-<body ng-controller="myController" style="font-size: 20px;">
+        * {
+            font-family: 'Alkatra', cursive;
+        }
+
+        .container {
+            text-align: center;
+            margin: auto;
+        }
+
+        input{
+            margin-bottom: 15px;
+            font-size: 15px;
+            padding: 3px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: auto;
+            text-align: center;
+            width: 550px;
+        }
+        th {
+            background-color: #b5b5bc;
+            border: 2px solid rgb(0, 0, 0);
+            line-height: 2;
+            font-size: 20px;
+            padding: 10px;
+        }
+        
+        td {
+            font-size: 18px;
+            padding: 6px 0;
+            border: 2px solid black;
+        }
+    </style>
+
+<body ng-controller="myController">
 
     <div class="container" >
-        <h1>Billing Section</h1>
-        <table class="table" border="1">
+        <h1>Product Filter</h1>
+        <form class="add_product" ng-submit="add(name,price,qty)">
+            <input type="text" placeholder="Product Name" ng-model="name">
+            <input type="number" placeholder="Product Price" ng-model="price" >
+            <input type="number" placeholder="Product Quantity" ng-model="qty">
+            <input type="submit" value="Add"/>
+        </form>
+        <table class="table" >
             <thead>
                 <tr>
-                    <th ng-click="myFunction('name')">Product Name</th>
-                    <th ng-click="myFunction('price')">Product Price</th>
-                    <th ng-click="myFunction('qut')">Quantity</th>
+                    <th ng-click="myFunc('Name')">Product Name</th>
+                    <th ng-click="myFunc('Price')">Product Price</th>
+                    <th ng-click="myFunc('qty')">Quantity</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="product in products | orderBy:order">
-                    <td><input style="padding: 3px;" type="text" ng-model="product.name"></td>
-                    <td><input style="padding: 3px;" type="number" ng-model="product.price"></td>
-                    <td><input style="padding: 3px;" type="number" ng-model="product.qut"></td>
+                    <td  >{{product.Name}}</td>
+                    <td  >{{product.Price}}</td>
+                    <td  >{{product.qty}}</td>
                 </tr>
-    
             </tbody>
         </table>
     </div>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myMod">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Koladiya</title>
+    <script src="angular.min.js"></script>
+    <script src="module1.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+
+        * {
+            font-family: 'Alkatra', cursive;
+        }
+
+        .container {
+            text-align: center;
+            margin: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: auto;
+            text-align: center;
+            width: 500px;
+        }
+        th {
+            background-color: #b5b5bc;
+            border: 2px solid rgb(0, 0, 0);
+            line-height: 2;
+            font-size: 20px;
+            padding: 10px;
+        }
+        
+        td {
+            font-size: 18px;
+            padding: 6px 0;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body ng-controller="productController">
+    <div class="container">
+        <h1>Data From API</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in myData">
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

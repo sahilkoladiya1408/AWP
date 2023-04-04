@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Koladiya</title>
+    <script src="./angular.min.js"></script>
+    <script src="module1.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body ng-app="resumeMod">
+    <div class="container" ng-controller="resumeController">
+        <div class="personal_info">
+            <h1>{{name}}</h1>
+            <p>Email : {{email}}</p>
+            <p>Phone : {{phone}}</p>
+            <section>
+                <a href="#"><i class="fa-brands fa-linkedin fa-xl" style="color: #1153c5;"></i></i></a>
+                <a href="#"><i class="fa-brands fa-github fa-xl" style="color: #000000;"></i></a>
+            </section>
+        </div>
+        <div class="other_info">
+            <section>
+                <h3>Education</h3>
+                <hr>
+                <ul>
+                    <li ng-repeat="item in education">
+                        <h4>{{item.school}} | {{item.year}}</h4>
+                        <p>{{item.course}}</p>
+                        <p>{{item.other}}</p>
+                    </li>
+
+                </ul>
+            </section>
+            <section>
+                <h3>Skills</h3>
+                <hr>
+                <ul>
+                    <li ng-repeat="item in skills">
+                        <b>{{item.type}} :</b>
+                        <span ng-repeat="item in item.skill" class="skill_box">{{item}}</span>
+                    </li>
+
+                </ul>
+            </section>
+            <section>
+                <h3>Projects</h3>
+                <hr>
+                <ul>
+                    <li ng-repeat="item in projects">
+                        <h4>{{item.title}} :</h4>
+                        <p>{{item.desc}}</p>
+                    </li>
+
+                </ul>
+            </section>
+        </div>
+    </div>
+
+</body>
+
+</html>
